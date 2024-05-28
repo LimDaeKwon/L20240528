@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h"
+class FCard;
 class FPlayer :public FPerson
 {
 public:
@@ -7,6 +8,6 @@ public:
 	FPlayer();
 	virtual ~FPlayer();
 	virtual void GetCard(FDeck& Deck) override;
-	int PlayerCard[2];
+	FCard PlayerCard[2];
 };
 

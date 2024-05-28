@@ -1,10 +1,12 @@
 #pragma once
+#include<iostream>
 class FCard
 {
 public:
 	FCard();
 	virtual ~FCard();
 
-	int Cards[52] = { 0 , };
+	int Card;
+	std::string Shape;
 };
 

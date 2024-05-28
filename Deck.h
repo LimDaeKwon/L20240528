@@ -1,12 +1,14 @@
 #pragma once
-#include"Card.h"
+using namespace std;
+class FCard;
+
 class FDeck
 {
 public:
 	FDeck();
 	virtual ~FDeck();
 public:
-	FCard Deck;
+	FCard Cards[52];
 	int CardCount;
 	void Suffle();
 };

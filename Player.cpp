@@ -4,8 +4,6 @@
 using namespace std;
 FPlayer::FPlayer()
 {
-	PlayerCard[0] = 0;
-	PlayerCard[1] = 0;
 
 }
 
@@ -24,17 +22,17 @@ void FPlayer::GetCard(FDeck& Deck)
 			Deck.Suffle();
 			Deck.CardCount = 0;
 		}
-		PlayerCard[Index] = Deck.Deck.Cards[Deck.CardCount++];
+		PlayerCard[Index] = Deck.Cards[Deck.CardCount++];
 	}
 
-	std::cout << "PlayerCard 1 : " << PlayerCard[0] << "   PlayerCard 2 :  " << PlayerCard[1];
+	std::cout << "PlayerCard 1 : " << PlayerCard[0].Shape << " " << PlayerCard[0].Card << "   PlayerCard 2 :  " << PlayerCard[1].Shape << " " << PlayerCard[1].Card;
 	for (int i = 0; i < 2; i++)
 	{
-		if (PlayerCard[i] > 10)
+		if (PlayerCard[i].Card > 10)
 		{
-			PlayerCard[i] = 10;
+			PlayerCard[i].Card = 10;
 		}
 	}
-	std::cout << "   гу : " << PlayerCard[0] + PlayerCard[1] << std::endl;
+	std::cout << "   гу : " << PlayerCard[0].Card + PlayerCard[1].Card << std::endl;
 
 }

@@ -28,7 +28,7 @@ int main()
 			{
 				Persons[Index]->GetCard(MyDeck);
 			}
-			dynamic_cast<FDealer*>(Persons[0])->DeclareVictory(dynamic_cast<FPlayer*>(Persons[1])->PlayerCard[0], dynamic_cast<FPlayer*>(Persons[1])->PlayerCard[1]);
+			dynamic_cast<FDealer*>(Persons[0])->DeclareVictory(dynamic_cast<FPlayer*>(Persons[1])->PlayerCard[0].Card, dynamic_cast<FPlayer*>(Persons[1])->PlayerCard[1].Card);
 			cout << "계속하려면 1 , 끝내려면 0 입력" << endl<<endl;
 		}
 		if(StartGame == 0)
