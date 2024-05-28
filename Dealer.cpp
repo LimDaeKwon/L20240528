@@ -3,6 +3,8 @@
 using namespace std;
 FDealer::FDealer()
 {
+	DealerCard[0] = 0;
+	DealerCard[1] = 0;
 
 }
 
@@ -13,8 +15,17 @@ FDealer::~FDealer()
 
 void FDealer::GetCard(FDeck& Deck)
 {
-	DealerCard[0] = Deck.Deck.Cards[Deck.CardCount++];
-	DealerCard[1] = Deck.Deck.Cards[Deck.CardCount++];
+
+	for (int Index = 0; Index < 2; ++Index)
+	{
+		if (Deck.CardCount == 52)
+		{
+			cout << "덱을 모두 소진하였습니다 . 다시 Suffle()" << endl << endl;
+			Deck.Suffle();
+			Deck.CardCount = 0;
+		}
+		DealerCard[Index] = Deck.Deck.Cards[Deck.CardCount++];
+	}
 	
 	std::cout << "DealerCard 1 : " << DealerCard[0] << "   DealerCard 2 :  " << DealerCard[1];
 	for (int i = 0; i < 2; ++i)
